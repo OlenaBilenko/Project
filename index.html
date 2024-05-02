@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./log-modal/log-modal.css" />
+  </head>
+  <body>
+    <header class="header"><h1>My healthy life</h1></header>
+    <nav class="nav">
+      <!-- <div class="logo-container">
+        <a class="logo-link" href="index.html"
+          ><img class="logo-img" src="" alt="logo" />Logo</a>
+      </div> -->
+      <ul class="nav-list">
+        <li>
+          <a class="nav-list-link" href="#">About us</a>
+        </li>
+        <li>
+          <a class="nav-list-link" href="#">Blog</a>
+        </li>
+        <li>
+          <a class="nav-list-link" href="#">Company</a>
+        </li>
+        <li>
+          <a class="nav-list-link" href="#">Support organization</a>
+        </li>
+        <li>
+          <a class="nav-list-link" href="#">Books</a>
+        </li>
+        <li>
+          <a class="nav-list-link" href="#">Media</a>
+        </li>
+        <li>
+          <a class="nav-list-link" href="#">Contact</a>
+        </li>
+        <li>
+          <a href="#">
+            <svg
+              class="support-heart"
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+            >
+              <path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z" />
+            </svg>
+            Support</a
+          >
+        </li>
+      </ul>
+      <div class="nav-toggle">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="bars"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          class="burger-icon"
+        >
+          <path
+            fill="currentColor"
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+            class=""
+          ></path>
+        </svg>
+      </div>
+    </nav>
+    <div class="update-info"></div>
+    <main class="content">
+      <div class="graphics">
+        <div class="graphic-temp">
+          <h4>Body temperature</h4>
+          <div class="graph-body-temp">
+            <canvas id="tempChart"></canvas>
+          </div>
+        </div>
+
+        <div class="graphic-weight">
+          <h4>Body weight</h4>
+          <div class="graph-body-weight">
+            <canvas id="weightChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="add-button">
+        <button class="btn-log">+</button>
+      </div>
+      <div class="hydration-and-planing">
+        <div class="hydration">
+          <h4>Hydration</h4>
+          <div class="hydration-bottle"></div>
+        </div>
+
+        <div class="daily-planing">
+          <h4>Daily-planing</h4>
+          <div class="daily-table"></div>
+        </div>
+      </div>
+      <div class="table-box">
+        <h4>Table-box</h4>
+        <div class="data-table-info">table</div>
+      </div>
+      <div class="info-posts">
+        <h4>Info-posts</h4>
+        <div class="post">
+          <div class="post-img">Image</div>
+          <div class="post-content">
+            <div class="post-title">Title</div>
+            <div class="post-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              rhoncus tortor id diam ullamcorper cursus. Vivamus quis elit
+              turpis. Nulla ac orci id mauris sollicitudin dictum quis quis
+              nisi. Aliquam dui nisi, tristique ut faucibus nec, euismod at dui.
+              Cras pulvinar, lacus in ornare lacinia, nisi mauris aliquet velit,
+              a hendrerit eros tortor et mauris. Morbi scelerisque massa eget
+              dapibus blandit. Suspendisse justo nulla, venenatis non tempus
+              sed, finibus sit amet nibh. Donec bibendum nisi elementum rhoncus
+              consequat.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">Bilenko Olena - 2024</footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
