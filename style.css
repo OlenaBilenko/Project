@@ -1,3 +1,4 @@
+header,
 body {
   font-family: "Raleway", "Arial", "Helvetica", sans-serif;
   margin: 0;
@@ -8,8 +9,6 @@ body {
 }
 
 header {
-  font-style: oblique;
-  position: sticky;
   top: 0px;
   padding: 30px 0px;
 }
@@ -20,19 +19,14 @@ header {
   border-bottom: 2px solid #050038;
   background-color: #484282;
   flex-direction: column;
-  /* position: fixed; */
-  /* z-index: 1; */
   display: flex;
-  align-items: flex-start;
-  align-content: center;
-
-  /* margin: 0px;
-  padding: 0px; */
+  align-items: baseline;
+  justify-content: center;
 }
-
 ul {
   list-style-type: none;
   margin: 0;
+  padding-inline-start: 20px;
 }
 a {
   text-decoration: none;
@@ -92,7 +86,6 @@ a {
   margin-right: 5px;
 }
 .update-info {
-  /* position: fixed; */
   top: 140px;
   height: 24px;
   width: 100vw;
@@ -105,7 +98,6 @@ footer {
   box-sizing: border-box;
   width: 100vw;
   height: 100px;
-  /* bottom: 0px; */
   margin: 0;
   align-content: center;
   text-align: left;
@@ -115,7 +107,6 @@ footer {
 footer {
   font-size: medium;
   margin: 0;
-  /* position: fixed; */
   bottom: 0px;
 }
 .content {
@@ -125,12 +116,10 @@ footer {
   width: 100vw;
   margin: 0px;
   padding: 0px;
-  /* border: darkgray solid 2px; */
 }
 .graphics,
 .hydration-and-planing {
   width: 100vw;
-  /* width: fit-content; */
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -139,23 +128,24 @@ footer {
 }
 .graphic-temp,
 .graphic-weight {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 47%;
-  min-width: 382px;
+  /* min-width: 382px; */
   border: gray solid 1px;
   padding: 8px;
 }
 .graphic-temp {
-  margin: 24px 24px 24px 0;
+  margin: 24px 0 24px 0;
 }
 .graphic-weight {
-  margin: 24px 0 24px 24px;
+  margin: 24px 0 24px 0;
 }
 .add-button {
   position: fixed;
-  top: 653px;
+  top: 553px;
   right: 25px;
   display: flex;
   justify-content: center;
@@ -174,8 +164,9 @@ footer {
 }
 .btn-log:hover {
   background-color: #484282;
-  border: solid 4px #050038;
-  color: white;
+  border: solid 4px coral;
+  color: coral;
+  cursor: pointer;
 }
 .hydration,
 .daily-planing {
@@ -205,10 +196,12 @@ footer {
   background-color: lightgrey;
   /* border: darkgray solid 2px; */
 }
+
 .data-table-info,
 .post {
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: flex;
   align-content: center;
   width: 100%;
@@ -221,6 +214,7 @@ footer {
 div h4 {
   text-align: left;
   font-size: 24px;
+  margin: 8px 0;
 }
 .post-content {
   display: flex;
@@ -251,49 +245,154 @@ div h4 {
   -webkit-box-orient: vertical;
   white-space: normal;
 }
-img {
-  max-width: 100%;
-  height: fit-content;
+@media screen and (min-width: 810px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+@media screen and (max-width: 810px) {
+  .nav-list {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+@media screen and (max-width: 810px) {
+  .graphics,
+  .hydration-and-planing {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .graphic-temp,
+  .graphic-weight {
+    width: 100%;
+    margin: 24px 0 0;
+  }
+  .daily-planing {
+    margin-bottom: 24px;
+    width: 90%;
+  }
+  .hydration {
+    margin: 0 0 24px 0;
+  }
+  .post {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.nav-toggle {
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.burger-icon {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  vertical-align: -0.125em;
 }
 
-/* .button-like:focus {
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+dialog {
+  z-index: 10;
+  background: white;
+  color: black;
+  border: 1px solid #050038;
+  padding: 0px;
+  /* border-radius: 1rem; */
 }
-.post-list-item {
-  position: relative;
+.dialog-box {
+  width: 800px;
+  height: 500px;
+  /* margin-bottom: 15px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 130px;
-  margin-bottom: 50px;
-  padding:  20px 50px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 2px 2px darkslategray;
-}
-.post-index {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  background-color: burlywood;
+  padding: 0px;
 }
-.post-title {
-  margin: 0;
+.dialog-box-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #050038;
+  color: white;
 }
-.post-text {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  white-space: normal;
+.dialog-box-title button {
+  margin-right: 0.5em;
+  background-color: #050038;
+  color: white;
+  font-size: x-large;
+  border-style: none;
+  cursor: pointer;
+  border: solid 1px #050038;
 }
-.post-link {
-  text-align: center;
-  color: indianred;
-} */
+.dialog-box-title button:hover {
+  border: solid 1px white;
+  transition: all 0.5s ease;
+}
+.dialog-box-title h1 {
+  margin-left: 1em;
+}
+.dialog-box-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+}
+.dialog-box-content-temp,
+.dialog-box-content-weigth-heigth,
+.dialog-box-content-medication {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  height: 80%;
+  border-radius: 3rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dialog-box-content-temp img,
+.dialog-box-content-weigth-heigth img,
+.dialog-box-content-medication img {
+  width: 70%;
+  height: auto;
+}
+.dialog-box-content-temp h4,
+.dialog-box-content-weigth-heigth h4,
+.dialog-box-content-medication h4 {
+  align-items: center;
+  text-wrap: wrap;
+}
+.dialog-box-content-temp {
+  border: 2px solid yellow;
+}
+.dialog-box-content-temp:hover {
+  box-shadow: 0px 0px 10px yellow;
+}
+.dialog-box-content-weigth-heigth {
+  border: 2px solid greenyellow;
+}
+.dialog-box-content-weigth-heigth:hover {
+  box-shadow: 0px 0px 10px greenyellow;
+}
+.dialog-box-content-medication {
+  border: 2px solid lightskyblue;
+}
+.dialog-box-content-medication:hover {
+  box-shadow: 0px 0px 10px lightskyblue;
+}
+
+dialog::backdrop {
+  background-color: hsla(240, 1%, 25%, 0.95);
+}

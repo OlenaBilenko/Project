@@ -16,22 +16,22 @@
       </div> -->
       <ul class="nav-list">
         <li>
-          <a class="nav-list-link" href="#">About us</a>
+          <a class="nav-list-link" href="#">Body temperature</a>
         </li>
         <li>
-          <a class="nav-list-link" href="#">Blog</a>
+          <a class="nav-list-link" href="#">Body weight</a>
         </li>
         <li>
-          <a class="nav-list-link" href="#">Company</a>
+          <a class="nav-list-link" href="#">Hydration</a>
         </li>
         <li>
-          <a class="nav-list-link" href="#">Support organization</a>
+          <a class="nav-list-link" href="#">Daily planing</a>
         </li>
         <li>
-          <a class="nav-list-link" href="#">Books</a>
+          <a class="nav-list-link" href="#">Table box</a>
         </li>
         <li>
-          <a class="nav-list-link" href="#">Media</a>
+          <a class="nav-list-link" href="#">Info posts</a>
         </li>
         <li>
           <a class="nav-list-link" href="#">Contact</a>
@@ -71,6 +71,34 @@
       </div>
     </nav>
     <div class="update-info"></div>
+    <dialog>
+      <div class="dialog-box">
+        <div class="dialog-box-title">
+          <h1>Add log</h1>
+          <button formmethod="dialog" type="cancel">X</button>
+        </div>
+        <div class="dialog-box-content">
+          <div class="dialog-box-content-temp">
+            <img src="./log-modal/img/thermometer-solid.svg" alt="thermometer"></img>
+            <h4>Body Temperature</h4>
+          </div>
+          <div class="dialog-box-content-weigth-heigth">
+            <img src="./log-modal/img/weight-scale-solid.svg" alt="weight/height"></img>
+            <h4>Body Weight/Height</h4>
+          </div>
+          <div class="dialog-box-content-medication">
+            <img src="./log-modal/img/pills-solid.svg" alt="medication"></img>
+            <h4>Medication</h4>
+          </div>
+          <!-- <span>You can see me</span> -->
+        </div>
+        <!-- <form>
+          <input type="text" />
+          <button formmethod="dialog" type="submit">Cancel</button>
+          <button type="submit">Submit</button>
+        </form> -->
+      </div>
+    </dialog>
     <main class="content">
       <div class="graphics">
         <div class="graphic-temp">
@@ -126,6 +154,7 @@
         </div>
       </div>
     </main>
+    <div id="morecontent"></div>
     <footer class="footer">Bilenko Olena - 2024</footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
