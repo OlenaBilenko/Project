@@ -91,26 +91,38 @@ createGraphs();
 //   createGraphs();
 // }
 
-const btnLog = document.querySelector("body > main > div.add-button > button");
-const dialog = document.querySelector("dialog");
-const dialogClose = document.querySelector("dialog > div > div > button");
+const btnLog = document.querySelector("#buttonAddLog");
+const addLogModal = document.querySelector("#addLogModal");
+const dialogClose = document.querySelector("#addLogModalCancel");
 
 btnLog.addEventListener("click", () => {
-  dialog.showModal();
+  addLogModal.showModal();
 });
 
 dialogClose.addEventListener("click", () => {
-  dialog.close();
+  addLogModal.close();
 });
 
-// dialog.addEventListener("click", (e) => {
-//   const dialogDimensions = dialog.getBoundingClientRect();
-//   if (
-//     e.clientX < dialogDimensions.left ||
-//     e.clientX > dialogDimensions.right ||
-//     e.clientY < dialogDimensions.top ||
-//     e.clientY > dialogDimensions.bottom
-//   ) {
-//     dialog.close();
-//   }
-// });
+addLogModal.addEventListener("click", (e) => {
+  const dialogDimensions = addLogModal.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    addLogModal.close();
+  }
+});
+const tempLog = document.querySelector("#bodyTempLog");
+const addTempModal = document.querySelector("#bodyTempModal");
+const tempCloseButton = document.querySelector("#cancelButton");
+
+tempLog.addEventListener("click", () => {
+  addLogModal.close();
+  addTempModal.showModal();
+});
+
+tempCloseButton.addEventListener("click", () => {
+  addTempModal.close();
+});

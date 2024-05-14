@@ -70,14 +70,16 @@ a {
 .nav-list li:last-of-type a {
   display: flex;
   align-items: center;
-  background-color: coral;
+  background-color: #484282;
+  color: coral;
   height: 30px;
   padding: 0 10px;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
 .nav-list li:last-of-type a:hover {
-  background-color: rgb(232, 83, 29);
+  background-color: coral;
+  color: #484282;
 }
 .nav-list li:last-of-type a svg {
   width: 1em;
@@ -296,8 +298,8 @@ div h4 {
   vertical-align: -0.125em;
 }
 
-dialog {
-  z-index: 10;
+.dialog-add-log {
+  z-index: 1;
   background: white;
   color: black;
   border: 1px solid #050038;
@@ -378,21 +380,101 @@ dialog {
   border: 2px solid yellow;
 }
 .dialog-box-content-temp:hover {
-  box-shadow: 0px 0px 10px yellow;
+  box-shadow: 0px 0px 15px yellow;
 }
 .dialog-box-content-weigth-heigth {
   border: 2px solid greenyellow;
 }
 .dialog-box-content-weigth-heigth:hover {
-  box-shadow: 0px 0px 10px greenyellow;
+  box-shadow: 0px 0px 15px greenyellow;
 }
 .dialog-box-content-medication {
   border: 2px solid lightskyblue;
 }
 .dialog-box-content-medication:hover {
-  box-shadow: 0px 0px 10px lightskyblue;
+  box-shadow: 0px 0px 15px lightskyblue;
 }
 
-dialog::backdrop {
+.dialog-add-log::backdrop {
   background-color: hsla(240, 1%, 25%, 0.95);
+}
+/*  */
+/*  */
+.dialog-body-temp-modal::backdrop {
+  background-color: hsla(240, 1%, 25%, 0.95);
+}
+.dialog-body-temp-modal {
+  width: 300px;
+  z-index: 2;
+  background: white;
+  color: black;
+  border: 1px solid #050038;
+  padding: 0px;
+}
+.dialog-body-temp {
+  background-color: #050038;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px;
+}
+.dialog-body-temp-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.dialog-body-temp-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* background-color: ; */
+}
+input {
+  width: 80%;
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 1px;
+  border: solid 1px #050038;
+}
+#cancelButton {
+  width: 40%;
+  margin: 1em;
+  padding: 0.5em;
+  background-color: #484282;
+  color: white;
+  font-size: 1rem;
+  border-style: none;
+  cursor: pointer;
+  border: solid 1px #050038;
+  border-radius: 4px;
+}
+#submitButton {
+  width: 40%;
+  margin: 1em;
+  padding: 0.5em;
+  background-color: white;
+  color: #050038;
+  font-size: 1rem;
+  border-style: none;
+  cursor: pointer;
+  border: solid 1px #484282;
+  border-radius: 4px;
+}
+.tempComment {
+  width: 80%;
+  padding: 0.5em;
+  border-radius: 1px;
+  background-color: lightgrey;
+}
+.tempComment input {
+  width: 90%;
+  margin: 5px 0 0 0;
+  border-color: gray;
 }

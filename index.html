@@ -10,10 +10,6 @@
   <body>
     <header class="header"><h1>My healthy life</h1></header>
     <nav class="nav">
-      <!-- <div class="logo-container">
-        <a class="logo-link" href="index.html"
-          ><img class="logo-img" src="" alt="logo" />Logo</a>
-      </div> -->
       <ul class="nav-list">
         <li>
           <a class="nav-list-link" href="#">Body temperature</a>
@@ -71,14 +67,14 @@
       </div>
     </nav>
     <div class="update-info"></div>
-    <dialog>
+    <dialog id="addLogModal" class="dialog-add-log">
       <div class="dialog-box">
         <div class="dialog-box-title">
           <h1>Add log</h1>
-          <button formmethod="dialog" type="cancel">X</button>
+          <button id="addLogModalCancel" type="cancel">X</button>
         </div>
         <div class="dialog-box-content">
-          <div class="dialog-box-content-temp">
+          <div id="bodyTempLog" class="dialog-box-content-temp">
             <img src="./log-modal/img/thermometer-solid.svg" alt="thermometer"></img>
             <h4>Body Temperature</h4>
           </div>
@@ -92,11 +88,28 @@
           </div>
           <!-- <span>You can see me</span> -->
         </div>
-        <!-- <form>
-          <input type="text" />
-          <button formmethod="dialog" type="submit">Cancel</button>
-          <button type="submit">Submit</button>
-        </form> -->
+      </div>
+    </dialog>
+    <dialog id="bodyTempModal" class="dialog-body-temp-modal">
+      <div class="dialog-body-temp">
+        <div class="dialog-box-title">
+          <h1>Body Temperature</h1>
+        </div>
+        <div class="dialog-body-temp-content">
+            <input id="time" type="time" placeholder="Time" />
+            <input id="temp" type="number" placeholder="Temperature, C" />
+            <input id="temp" type="number" placeholder="Saturation, %"/>
+            <input id="temp" list="browser" name="symptoms" placeholder="Symptoms"/>
+            <input id="temp" type="number" placeholder="Respiratory frequency"/>
+            <div class="tempComment">
+              <label for="tempComment" style="font-size: small;">Comment</label>
+              <input id="tempComment" type="text" placeholder="Text"/>
+            </div>
+        </div>
+        <div class="dialog-body-temp-btns">
+          <button id="cancelButton" type="submit">Cancel</button>
+          <button id="submitButton" type="submit">Ok</button>
+        </div>
       </div>
     </dialog>
     <main class="content">
@@ -116,7 +129,7 @@
         </div>
       </div>
       <div class="add-button">
-        <button class="btn-log">+</button>
+        <button id="buttonAddLog" class="btn-log">+</button>
       </div>
       <div class="hydration-and-planing">
         <div class="hydration">
