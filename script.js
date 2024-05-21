@@ -80,17 +80,8 @@ function createGraphs() {
   });
 }
 createGraphs();
-// async function loadHtml(name) {
-//   const response = await fetch(name);
-//   const html = await response.text();
-//   document.getElementById("morecontent").innerHTML += html;
-// }
 
-// async function init() {
-//   await loadHtml("./log-modal/log-modal.html");
-//   createGraphs();
-// }
-
+//Adding logs
 const btnLog = document.querySelector("#buttonAddLog");
 const addLogModal = document.querySelector("#addLogModal");
 const dialogClose = document.querySelector("#addLogModalCancel");
@@ -114,9 +105,11 @@ addLogModal.addEventListener("click", (e) => {
     addLogModal.close();
   }
 });
+
+//Open/close temperature modal
 const tempLog = document.querySelector("#bodyTempLog");
 const addTempModal = document.querySelector("#bodyTempModal");
-const tempCloseButton = document.querySelector("#cancelButton");
+const tempCloseButton = document.querySelector("#cancelTempButton");
 
 tempLog.addEventListener("click", () => {
   addLogModal.close();
@@ -125,4 +118,71 @@ tempLog.addEventListener("click", () => {
 
 tempCloseButton.addEventListener("click", () => {
   addTempModal.close();
+});
+
+//Open/close weigth and height modal
+const weigthHeightLog = document.querySelector("#bodyWeigthHeightLog");
+const addWeigthHeightModal = document.querySelector("#bodyWeigthHeightModal");
+const weigthHeightCloseButton = document.querySelector(
+  "#cancelWeigthHeightButton"
+);
+
+weigthHeightLog.addEventListener("click", () => {
+  addLogModal.close();
+  addTempModal.close();
+  addWeigthHeightModal.showModal();
+});
+
+weigthHeightCloseButton.addEventListener("click", () => {
+  addWeigthHeightModal.close();
+});
+
+//Open/close medication modal
+const medicationLog = document.querySelector("#medicationLog");
+const addMedicationModal = document.querySelector("#medicationModal");
+const medicationCloseButton = document.querySelector("#cancelMedicationButton");
+
+medicationLog.addEventListener("click", () => {
+  addLogModal.close();
+  addTempModal.close();
+  addWeigthHeightModal.close();
+  addMedicationModal.showModal();
+});
+
+medicationCloseButton.addEventListener("click", () => {
+  addMedicationModal.close();
+});
+//
+const submitMedicationButton = document.querySelector(
+  "#submitMedicationButton"
+);
+
+// console.log(document.querySelector("#nameMedicationModal"));
+var medicationList = [];
+submitMedicationButton.addEventListener("click", () => {
+  // let medicationList = [];
+  let nameMedicationModal = document.querySelector(
+    "#nameMedicationModal"
+  ).value;
+  let dosageMedicationModal = document.querySelector(
+    "#dosageMedicationModal"
+  ).value;
+  let quantityMedicationModal = document.querySelector(
+    "#quantityMedicationModal"
+  ).value;
+
+  let medication = {
+    name: nameMedicationModal,
+    dosage: dosageMedicationModal,
+    quantity: quantityMedicationModal,
+  };
+  medicationList.push(medication);
+  document.querySelector("#nameMedicationModal").value = "";
+  document.querySelector("#dosageMedicationModal").value = "";
+  document.querySelector("#quantityMedicationModal").value = "";
+  // addMedicationModal.close();
+  alert(
+    `Medication ${nameMedicationModal} ${dosageMedicationModal} qty ${quantityMedicationModal} added successfully!`
+  );
+  console.log(medicationList);
 });

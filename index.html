@@ -78,11 +78,11 @@
             <img src="./log-modal/img/thermometer-solid.svg" alt="thermometer"></img>
             <h4>Body Temperature</h4>
           </div>
-          <div class="dialog-box-content-weigth-heigth">
+          <div id="bodyWeigthHeightLog" class="dialog-box-content-weigth-heigth">
             <img src="./log-modal/img/weight-scale-solid.svg" alt="weight/height"></img>
             <h4>Body Weight/Height</h4>
           </div>
-          <div class="dialog-box-content-medication">
+          <div id="medicationLog" class="dialog-box-content-medication">
             <img src="./log-modal/img/pills-solid.svg" alt="medication"></img>
             <h4>Medication</h4>
           </div>
@@ -90,28 +90,72 @@
         </div>
       </div>
     </dialog>
-    <dialog id="bodyTempModal" class="dialog-body-temp-modal">
-      <div class="dialog-body-temp">
+
+    <dialog id="bodyTempModal" class="dialog-modal">
+      <div class="dialog-box-modal">
         <div class="dialog-box-title">
           <h1>Body Temperature</h1>
         </div>
-        <div class="dialog-body-temp-content">
-            <input id="time" type="time" placeholder="Time" />
-            <input id="temp" type="number" placeholder="Temperature, C" />
-            <input id="temp" type="number" placeholder="Saturation, %"/>
-            <input id="temp" list="browser" name="symptoms" placeholder="Symptoms"/>
-            <input id="temp" type="number" placeholder="Respiratory frequency"/>
+        <div id="dialog-box-modal-content-tempetature" class="dialog-box-modal-content">
+            <input id="tempTime" type="time" placeholder="Time" />
+            <input id="temperature" type="number" placeholder="Temperature, C" />
+            <input id="saturation" type="number" placeholder="Saturation, %"/>
+            <input id="symptoms" list="browser" name="symptoms" placeholder="Symptoms"/>
+            <input id="respFrequency" type="number" placeholder="Respiratory frequency"/>
             <div class="tempComment">
               <label for="tempComment" style="font-size: small;">Comment</label>
               <input id="tempComment" type="text" placeholder="Text"/>
             </div>
         </div>
-        <div class="dialog-body-temp-btns">
-          <button id="cancelButton" type="submit">Cancel</button>
-          <button id="submitButton" type="submit">Ok</button>
+        <div class="dialog-box-modal-btns">
+          <button id="cancelTempButton" class="cancelButton" type="submit">Cancel</button>
+          <button id="submitTempButton" class="submitButton" type="submit">Ok</button>
         </div>
       </div>
     </dialog>
+    
+    <dialog id="bodyWeigthHeightModal" class="dialog-modal">
+      <div class="dialog-box-modal">
+        <div class="dialog-box-title">
+          <h1>Body Weigth / Height</h1>
+        </div>
+        <div id="dialog-box-modal-content-weight-height" class="dialog-box-modal-content">
+            <input id="weight" type="number" placeholder="Weight (kg)" />
+            <input id="height" type="number" placeholder="Height (cm)" />
+            <input id="bmiIndex" type="number" placeholder="IBody Mass Index (BMI)" disabled/>
+            <div class="tempComment">
+              <label for="tempComment" style="font-size: small;">Comment</label>
+              <input id="tempComment" type="text" placeholder="Text"/>
+            </div>
+        </div>
+        <div class="dialog-box-modal-btns">
+          <button id="cancelWeigthHeightButton" class="cancelButton" type="submit">Cancel</button>
+          <button id="submitWeigthHeightButton" class="submitButton" type="submit">Ok</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="medicationModal" class="dialog-modal">
+      <div class="dialog-box-modal">
+        <div class="dialog-box-title">
+          <h1>Add Medication</h1>
+        </div>
+        <div id="dialog-box-modal-content-medication" class="dialog-box-modal-content">
+            <input id="nameMedicationModal" type="text" placeholder="Name of Medication" />
+            <input id="dosageMedicationModal" type="number" placeholder="Dosage" />
+            <input id="quantityMedicationModal" type="number" placeholder="Quantity" />
+            <div class="tempComment">
+              <label for="tempComment" style="font-size: small;">Comment</label>
+              <input id="tempComment" type="text" placeholder="Text"/>
+            </div>
+        </div>
+        <div class="dialog-box-modal-btns">
+          <button id="cancelMedicationButton" class="cancelButton" type="submit">Cancel</button>
+          <button id="submitMedicationButton" class="submitButton" type="submit">Ok</button>
+        </div>
+      </div>
+    </dialog>
+
     <main class="content">
       <div class="graphics">
         <div class="graphic-temp">
