@@ -80,7 +80,14 @@ function createGraphs() {
   });
 }
 createGraphs();
+//
+const toggleButton = document.getElementById("#navToggle");
+const navListMenu = document.getElementById("#navMenuList");
 
+// toggleButton.addEventListener("click", () => {
+//   navToggle.classList.nav - toggle("hide");
+// });
+//
 //Adding logs
 const btnLog = document.querySelector("#buttonAddLog");
 const addLogModal = document.querySelector("#addLogModal");

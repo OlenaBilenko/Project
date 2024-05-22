@@ -23,6 +23,18 @@ header {
   align-items: baseline;
   justify-content: center;
 }
+/* .nav-min {
+  display: block;
+  width: 100vw;
+  height: auto;
+  top: 100px;
+  border-bottom: 2px solid #050038;
+  background-color: #484282;
+  flex-direction: row;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+} */
 ul {
   list-style-type: none;
   margin: 0;
@@ -254,7 +266,25 @@ div h4 {
 }
 @media screen and (max-width: 810px) {
   .nav-list {
+    display: block;
+  }
+  .nav {
+    display: block;
+    width: 100vw;
+    height: auto;
+    top: 100px;
+    border-bottom: 2px solid #050038;
+    background-color: #484282;
+    flex-direction: row;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+  .nav-list li {
     display: none;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    text-align: center;
   }
   .nav-toggle {
     display: block;
@@ -284,9 +314,15 @@ div h4 {
     justify-content: center;
     align-items: center;
   }
+  .dialog-box {
+    width: 100vw;
+    height: auto;
+  }
 }
 .nav-toggle {
   color: #fff;
+  background-color: #484282;
+  border: none;
   font-size: 2rem;
   cursor: pointer;
   margin-left: 30px;
@@ -309,7 +345,6 @@ div h4 {
 .dialog-box {
   width: 800px;
   height: 500px;
-  /* margin-bottom: 15px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -443,6 +478,15 @@ input {
   padding: 0.5em;
   border-radius: 1px;
   border: solid 1px #050038;
+}
+input:invalid {
+  border: 2px solid red;
+}
+input:valid {
+  border: solid 1px #050038;
+}
+input:focus {
+  border: 2px solid #484282;
 }
 .cancelButton {
   width: 40%;

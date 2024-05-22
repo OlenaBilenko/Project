@@ -9,8 +9,8 @@
   </head>
   <body>
     <header class="header"><h1>My healthy life</h1></header>
-    <nav class="nav">
-      <ul class="nav-list">
+    <nav id="navMenu" class="nav">
+      <ul id="navMenuList" class="nav-list">
         <li>
           <a class="nav-list-link" href="#">Body temperature</a>
         </li>
@@ -47,7 +47,7 @@
           >
         </li>
       </ul>
-      <div class="nav-toggle">
+      <button id="navToggle" class="nav-toggle">
         <svg
           aria-hidden="true"
           focusable="false"
@@ -64,7 +64,7 @@
             class=""
           ></path>
         </svg>
-      </div>
+      </button>
     </nav>
     <div class="update-info"></div>
     <dialog id="addLogModal" class="dialog-add-log">
@@ -141,9 +141,9 @@
           <h1>Add Medication</h1>
         </div>
         <div id="dialog-box-modal-content-medication" class="dialog-box-modal-content">
-            <input id="nameMedicationModal" type="text" placeholder="Name of Medication" />
-            <input id="dosageMedicationModal" type="number" placeholder="Dosage" />
-            <input id="quantityMedicationModal" type="number" placeholder="Quantity" />
+            <input id="nameMedicationModal" type="text" placeholder="Name of Medication" required/>
+            <input id="dosageMedicationModal" type="number" placeholder="Dosage" required/>
+            <input id="quantityMedicationModal" type="number" placeholder="Quantity" required/>
             <div class="tempComment">
               <label for="tempComment" style="font-size: small;">Comment</label>
               <input id="tempComment" type="text" placeholder="Text"/>
