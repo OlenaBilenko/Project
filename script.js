@@ -81,12 +81,12 @@ function createGraphs() {
 }
 createGraphs();
 //
-const toggleButton = document.getElementById("#navToggle");
-const navListMenu = document.getElementById("#navMenuList");
+const toggleButton = document.getElementById("navToggle");
+const navListMenu = document.getElementById("navMenuList");
 
-// toggleButton.addEventListener("click", () => {
-//   navToggle.classList.nav - toggle("hide");
-// });
+toggleButton.addEventListener("click", () => {
+  navListMenu.classList.toggle("hide-on-narrow-screen");
+});
 //
 //Adding logs
 const btnLog = document.querySelector("#buttonAddLog");
