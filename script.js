@@ -2,6 +2,7 @@ const bodyWeightChart = document.getElementById("weightChart");
 const bodyTempChart = document.getElementById("tempChart");
 
 function createGraphs() {
+  // Create the body temperature chart
   new Chart(bodyTempChart, {
     type: "line",
     data: {
@@ -40,6 +41,7 @@ function createGraphs() {
     },
   });
 
+  // Create the body weight chart
   new Chart(bodyWeightChart, {
     type: "line",
     data: {
@@ -80,14 +82,15 @@ function createGraphs() {
   });
 }
 createGraphs();
-//
+
+//Toggle the navigation menu on narrow screens
 const toggleButton = document.getElementById("navToggle");
 const navListMenu = document.getElementById("navMenuList");
 
 toggleButton.addEventListener("click", () => {
   navListMenu.classList.toggle("hide-on-narrow-screen");
 });
-//
+
 //Adding logs
 const btnLog = document.querySelector("#buttonAddLog");
 const addLogModal = document.querySelector("#addLogModal");
@@ -97,10 +100,12 @@ btnLog.addEventListener("click", () => {
   addLogModal.showModal();
 });
 
+//Close the modal by clicking the close button
 dialogClose.addEventListener("click", () => {
   addLogModal.close();
 });
 
+//Close the modal by clicking outside the dialog
 addLogModal.addEventListener("click", (e) => {
   const dialogDimensions = addLogModal.getBoundingClientRect();
   if (
@@ -156,16 +161,96 @@ medicationLog.addEventListener("click", () => {
   addMedicationModal.showModal();
 });
 
+//Close medication modal
 medicationCloseButton.addEventListener("click", () => {
   addMedicationModal.close();
 });
 //
+
+//Add temperature to the list
+let tempList = [];
+const submitTempButton = document.querySelector("#submitTempButton");
+submitTempButton.addEventListener("click", () => {
+  let tempTime = document.querySelector("#tempTime").value;
+  let tempValue = document.querySelector("#tempValue").value;
+  let tempSaturation = document.querySelector("#tempSaturation").value;
+  let tempSymptoms = document.querySelector("#tempSymptoms").value;
+  let respFrequency = document.querySelector("#respFrequency").value;
+  let tempComment = document.querySelector("#tempComment").value;
+
+  let temp = {
+    time: tempTime,
+    value: tempValue,
+    saturation: tempSaturation,
+    symptoms: tempSymptoms,
+    frequency: respFrequency,
+    comment: tempComment,
+  };
+  tempList.push(temp);
+  document.querySelector("#tempValue").value = ""; //Clear the input fields
+  document.querySelector("#tempTime").value = "";
+  document.querySelector("#tempSaturation").value = "";
+  document.querySelector("#tempSymptoms").value = "";
+  document.querySelector("#respFrequency").value = "";
+  document.querySelector("#tempComment").value = "";
+  alert(`Temperature ${tempValue} added successfully!`);
+  console.log(tempList);
+});
+
+//Add weight and height to the list
+let weightHeightList = [];
+const submitHeightWeightButton = document.querySelector(
+  "#submitWeigthHeightButton"
+);
+submitHeightWeightButton.addEventListener("click", () => {
+  let weightValue = document.querySelector("#weightValue").value;
+  let heightValue = document.querySelector("#heightValue").value;
+  let bmiIndex = document.querySelector("#bmiIndex").value;
+  let weigthHeightComment = document.querySelector(
+    "#weigthHeightComment"
+  ).value;
+
+  let weightHeight = {
+    weight: weightValue,
+    height: heightValue,
+    bmiIndex: bmiIndex,
+    weigthHeightComment: weigthHeightComment,
+  };
+  weightHeightList.push(weightHeight);
+  document.querySelector("#weightValue").value = ""; //Clear the input fields
+  document.querySelector("#heightValue").value = "";
+  document.querySelector("#bmiIndex").value = "";
+  document.querySelector("#weigthHeightComment").value = "";
+
+  alert(
+    `Weight ${weightValue}kg and height ${heightValue}cm added successfully!`
+  );
+
+  console.log(weightHeightList); //Check the list of weight and height
+  addWeigthHeightModal.close();
+});
+
+//Calculate BMI index
+const calcBMI = () => {
+  let weightValue = document.querySelector("#weightValue").value;
+  let heightValue = document.querySelector("#heightValue").value;
+  let bmiIndex = ((weightValue * 10000) / (heightValue * heightValue)).toFixed(
+    1
+  );
+  document.querySelector("#bmiIndex").value = bmiIndex;
+};
+
+//Update BMI index
+const weightInput = document.querySelector("#weightValue");
+const heightInput = document.querySelector("#heightValue");
+weightInput.addEventListener("change", calcBMI);
+heightInput.addEventListener("change", calcBMI);
+
+//Add medication to the list
+let medicationList = [];
 const submitMedicationButton = document.querySelector(
   "#submitMedicationButton"
 );
-
-// console.log(document.querySelector("#nameMedicationModal"));
-var medicationList = [];
 submitMedicationButton.addEventListener("click", () => {
   // let medicationList = [];
   let nameMedicationModal = document.querySelector(
@@ -193,3 +278,30 @@ submitMedicationButton.addEventListener("click", () => {
   );
   console.log(medicationList);
 });
+
+//Change the row style in the Daily inhalation planning table
+let doneRow = document.querySelector("tbody");
+doneRow.addEventListener(
+  "click",
+  function (ev) {
+    if (ev.target.tagName === "TD") {
+      ev.target.parentNode.classList.toggle("isDone");
+    }
+  },
+  false
+);
+// Delete the row in the Daily inhalation planning table
+let deleteRow = document.querySelector("tbody");
+deleteRow.addEventListener(
+  "click",
+  function (ev) {
+    if (
+      (ev.target.parentNode.classList.contains("trashTreatment") ||
+        ev.target.parentNode.parentNode.classList.contains("trashTreatment")) &&
+      ev.target.parentNode.parentNode.classList.contains("isDone") // Delete only the rows with the isDone class
+    ) {
+      ev.target.parentNode.parentNode.remove();
+    }
+  },
+  false
+);

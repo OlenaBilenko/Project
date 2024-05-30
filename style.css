@@ -97,7 +97,12 @@ a {
 
 header,
 footer {
+  /* background-image: url(./images/DNA_pic.jpeg); */
   background-color: #050038;
+  /* background-origin: content-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right; */
   box-sizing: border-box;
   width: 100vw;
   height: 100px;
@@ -203,13 +208,27 @@ th {
   text-align: center;
   padding: 8px;
 }
-tbody tr:nth-child(even) {
-  background-color: #dddddd;
-}
 
 tbody tr:hover {
   background-color: rgb(252, 205, 187);
-  /* cursor: pointer; */
+  cursor: pointer;
+}
+.trashTreatment svg {
+  width: 15px;
+  cursor: pointer;
+  display: none;
+}
+.isDone .trashTreatment svg {
+  display: block;
+}
+
+.isDone {
+  color: rgba(36, 33, 33, 0.613);
+  text-decoration: line-through;
+}
+.isDone td {
+  color: rgba(36, 33, 33, 0.613);
+  background-color: #dddddd;
 }
 
 .table-box,
@@ -279,6 +298,20 @@ img {
   -webkit-box-orient: vertical;
   white-space: normal;
 }
+@media screen and (min-width: 803px) {
+  .dialog-box-footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 802px) {
+  .dialog-box-footer {
+    display: flex;
+  }
+  div h4 {
+    font-size: calc(24px / 1.7);
+    text-align: center;
+  }
+}
 @media screen and (min-width: 838px) {
   .nav-toggle {
     display: none;
@@ -297,6 +330,7 @@ img {
   }
   .nav-list {
     flex-direction: column;
+    align-items: flex-start;
   }
   .nav {
     width: 100vw;
@@ -341,9 +375,29 @@ img {
     justify-content: center;
     align-items: center;
   }
+  .dialog-add-log {
+    max-width: 100vw;
+  }
   .dialog-box {
-    width: 100vw;
-    height: auto;
+    max-width: 100%;
+    max-height: calc(100vw - 100px);
+  }
+  .dialog-box-content-temp,
+  .dialog-box-content-weigth-heigth,
+  .dialog-box-content-medication {
+    border-radius: 2rem;
+    margin: 0.8rem;
+  }
+  .dialog-box-title h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 839px) {
+  .dialog-box-content-temp,
+  .dialog-box-content-weigth-heigth,
+  .dialog-box-content-medication {
+    border-radius: 3rem;
+    margin: 1rem;
   }
 }
 .nav-toggle {
@@ -421,8 +475,6 @@ img {
   align-items: center;
   width: 30%;
   height: 80%;
-  border-radius: 3rem;
-  margin: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -456,7 +508,11 @@ img {
 .dialog-box-content-medication:hover {
   box-shadow: 0px 0px 15px lightskyblue;
 }
-
+.dialog-box-footer {
+  width: 100%;
+  height: 60px;
+  background-color: #050038;
+}
 .dialog-add-log::backdrop {
   background-color: hsla(240, 1%, 25%, 0.95);
 }
