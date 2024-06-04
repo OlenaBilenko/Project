@@ -152,8 +152,9 @@ footer {
   margin: 24px 0 24px 0;
 }
 .add-button {
+  z-index: 1;
   position: fixed;
-  top: 553px;
+  bottom: 40px;
   right: 25px;
   display: flex;
   justify-content: center;
@@ -166,7 +167,8 @@ footer {
   color: white;
   width: 80px;
   height: 80px;
-  border-radius: 100%;
+  border: solid 3px #484282;
+  border-radius: 50%;
   background-color: #050038;
   transition-duration: 0.3s;
 }
@@ -180,13 +182,15 @@ footer {
 .daily-planing {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   border: gray solid 1px;
   padding: 0 24px 24px 24px;
 }
 .hydration {
   width: 30%;
   margin-right: 24px;
+  justify-content: space-between;
+  align-items: center;
 }
 .daily-planing {
   width: 70%;
@@ -369,6 +373,8 @@ img {
   }
   .hydration {
     margin: 0 0 24px 0;
+    width: 90%;
+    height: auto;
   }
   .post {
     flex-direction: column;
@@ -416,7 +422,7 @@ img {
 }
 
 .dialog-add-log {
-  z-index: 1;
+  z-index: 2;
   background: white;
   color: black;
   border: 1px solid #050038;
@@ -523,7 +529,7 @@ img {
 }
 .dialog-modal {
   width: 300px;
-  z-index: 2;
+  z-index: 3;
   background: white;
   color: black;
   border: 1px solid #050038;
@@ -614,4 +620,65 @@ input:focus {
 }
 #dialog-box-modal-content-medication input:hover {
   background-color: rgb(199, 229, 248);
+}
+/*  */
+/*  */
+/* hydration-bar styles */
+.hydration-box {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.out-box {
+  width: 250px;
+  height: 250px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.in-box {
+  width: 200px;
+  height: 200px;
+  /* border: 1px solid #dddddd; */
+  border-radius: 50%;
+  margin: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    -0.5px -0.5px 0px rgba(0, 0, 0, 0.15), -0.5px -0.5px 0px rgba(0, 0, 0, 0.05);
+}
+.hydration-percent {
+  font-size: 60px;
+  font-weight: 600;
+  color: #050038;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 25px;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  transition: stroke-dashoffset 2s;
+  animation: linear forwards;
+  animation: anime 2s linear forwards;
+}
+/* @keyframes anime {
+  65% {
+    stroke-dashoffset: 247.275;
+  }
+} */
+.hydration-box svg {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

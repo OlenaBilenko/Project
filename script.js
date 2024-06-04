@@ -305,3 +305,26 @@ deleteRow.addEventListener(
   },
   false
 );
+//
+//hydration-percent
+let hydrationPercent = document.getElementById("hydrationPercent");
+const circle = document.querySelector("circle");
+const radius = circle.r.baseVal.value;
+const circumference = 2 * Math.PI * radius;
+let counter = 0;
+let percent = 35;
+
+setInterval(() => {
+  if (counter == percent) {
+    clearInterval;
+  } else {
+    counter++;
+    hydrationPercent.innerHTML = `${counter}` + "%";
+    circle.style.strokeDasharray = `${circumference}`;
+    circle.style.strokeDashoffset = circumference;
+    const progress = (100 - counter) / 100;
+    const offset = circumference - progress * circumference;
+    circle.style.strokeDashoffset = offset;
+  }
+}, 30);
+setInterval(percent);
