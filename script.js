@@ -16,7 +16,6 @@ function createGraphs() {
       ], // Changed to date strings
       datasets: [
         {
-          //   label: '# of Votes',
           data: [36.3, 37, 37.3, 39, 38, 37.3],
           borderColor: "#484282",
           borderWidth: 1,
@@ -55,7 +54,6 @@ function createGraphs() {
       ], // Changed to date strings
       datasets: [
         {
-          //   label: '# of Votes',
           data: [38.5, 37.1, 37.8, 39.2, 38.8, 37.3],
           backgroundColor: "rgb(255, 127, 80)",
           borderColor: "rgb(255, 127, 80)",
@@ -252,7 +250,6 @@ const submitMedicationButton = document.querySelector(
   "#submitMedicationButton"
 );
 submitMedicationButton.addEventListener("click", () => {
-  // let medicationList = [];
   let nameMedicationModal = document.querySelector(
     "#nameMedicationModal"
   ).value;
@@ -314,17 +311,17 @@ const circumference = 2 * Math.PI * radius;
 let counter = 0;
 let percent = 35;
 
+circle.style.strokeDasharray = `${circumference}`;
+const progress = (100 - percent) / 100;
+const offset = progress * circumference;
+circle.style.strokeDashoffset = offset;
+
 setInterval(() => {
   if (counter == percent) {
     clearInterval;
   } else {
     counter++;
     hydrationPercent.innerHTML = `${counter}` + "%";
-    circle.style.strokeDasharray = `${circumference}`;
-    circle.style.strokeDashoffset = circumference;
-    const progress = (100 - counter) / 100;
-    const offset = circumference - progress * circumference;
-    circle.style.strokeDashoffset = offset;
   }
 }, 30);
 setInterval(percent);

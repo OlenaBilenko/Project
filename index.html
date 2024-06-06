@@ -99,8 +99,8 @@
           <h1>Body Temperature</h1>
         </div>
         <div id="dialog-box-modal-content-tempetature" class="dialog-box-modal-content">
-            <input id="tempTime" type="datetime-local"/>
-            <input id="tempValue" type="number" min="35" max="42" step="0.1"  value="36.6" placeholder="Temperature, C" />
+            <input id="tempTime" type="datetime-local" required/>
+            <input id="tempValue" type="number" min="35" max="42" step="0.1"  value="36.6" placeholder="Temperature, C" required />
             <input id="tempSaturation" type="number" min="0" max="100" step="1" placeholder="Saturation, %"/>
             <input id="tempSymptoms" list="browser" name="symptoms" placeholder="Symptoms"/>
             <input id="respFrequency" type="number" placeholder="Respiratory frequency"/>
@@ -122,8 +122,8 @@
           <h1>Body Weigth / Height</h1>
         </div>
         <div id="dialog-box-modal-content-weight-height" class="dialog-box-modal-content">
-            <input id="weightValue" type="number" placeholder="Weight (kg)" />
-            <input id="heightValue" type="number" placeholder="Height (cm)" />
+            <input id="weightValue" type="number" placeholder="Weight (kg)" required/>
+            <input id="heightValue" type="number" placeholder="Height (cm)" required/>
             <input id="bmiIndex" type="number" placeholder="IBody Mass Index (BMI)" disabled/>
             <div class="tempComment">
               <label for="tempComment" style="font-size: small;">Comment</label>
@@ -181,7 +181,7 @@
         <div class="hydration">
           <h4>Hydration</h4>
           <div>
-            
+
           </div>
           <div class="hydration-box">
             <div class="out-box">
@@ -197,7 +197,7 @@
                   <stop offset="100%" stop-color="#484282"/>
                 </linearGradient>
               </defs>
-              <circle cx="125" cy="125" r="112.5" stroke-linecap="round"/>
+              <circle cx="125" cy="125" r="112.5" stroke-linecap="round" stroke-dashoffset="706.5"/>
             </svg>
           </div>
         </div>
