@@ -130,17 +130,17 @@ tempCloseButton.addEventListener("click", () => {
   addTempModal.close();
 });
 
-addTempModal.addEventListener("click", (e) => {
-  //Close the modal by clicking outside the dialog
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    addTempModal.close();
-  }
-});
+// addTempModal.addEventListener("click", (e) => {
+//   //Close the modal by clicking outside the dialog
+//   if (
+//     e.clientX < dialogDimensions.left ||
+//     e.clientX > dialogDimensions.right ||
+//     e.clientY < dialogDimensions.top ||
+//     e.clientY > dialogDimensions.bottom
+//   ) {
+//     addTempModal.close();
+//   }
+// });
 
 //Open/close weigth and height modal
 const weigthHeightLog = document.querySelector("#bodyWeigthHeightLog");
@@ -159,17 +159,17 @@ weigthHeightCloseButton.addEventListener("click", () => {
   addWeigthHeightModal.close();
 });
 
-addWeigthHeightModal.addEventListener("click", (e) => {
-  //Close the modal by clicking outside the dialog
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    addWeigthHeightModal.close();
-  }
-});
+// addWeigthHeightModal.addEventListener("click", (e) => {
+//   //Close the modal by clicking outside the dialog
+//   if (
+//     e.clientX < dialogDimensions.left ||
+//     e.clientX > dialogDimensions.right ||
+//     e.clientY < dialogDimensions.top ||
+//     e.clientY > dialogDimensions.bottom
+//   ) {
+//     addWeigthHeightModal.close();
+//   }
+// });
 
 //Open/close medication modal
 const medicationLog = document.querySelector("#medicationLog");
@@ -188,17 +188,17 @@ medicationCloseButton.addEventListener("click", () => {
   addMedicationModal.close();
 });
 
-addMedicationModal.addEventListener("click", (e) => {
-  //Close the modal by clicking outside the dialog
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    addMedicationModal.close();
-  }
-});
+// addMedicationModal.addEventListener("click", (e) => {
+//   //Close the modal by clicking outside the dialog
+//   if (
+//     e.clientX < dialogDimensions.left ||
+//     e.clientX > dialogDimensions.right ||
+//     e.clientY < dialogDimensions.top ||
+//     e.clientY > dialogDimensions.bottom
+//   ) {
+//     addMedicationModal.close();
+//   }
+// });
 //
 
 //Add temperature to the list
