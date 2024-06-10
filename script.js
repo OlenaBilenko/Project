@@ -93,6 +93,7 @@ toggleButton.addEventListener("click", () => {
 const btnLog = document.querySelector("#buttonAddLog");
 const addLogModal = document.querySelector("#addLogModal");
 const dialogClose = document.querySelector("#addLogModalCancel");
+const dialogDimensions = addLogModal.getBoundingClientRect();
 
 btnLog.addEventListener("click", () => {
   addLogModal.showModal();
@@ -105,7 +106,6 @@ dialogClose.addEventListener("click", () => {
 
 //Close the modal by clicking outside the dialog
 addLogModal.addEventListener("click", (e) => {
-  const dialogDimensions = addLogModal.getBoundingClientRect();
   if (
     e.clientX < dialogDimensions.left ||
     e.clientX > dialogDimensions.right ||
@@ -130,6 +130,18 @@ tempCloseButton.addEventListener("click", () => {
   addTempModal.close();
 });
 
+addTempModal.addEventListener("click", (e) => {
+  //Close the modal by clicking outside the dialog
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    addTempModal.close();
+  }
+});
+
 //Open/close weigth and height modal
 const weigthHeightLog = document.querySelector("#bodyWeigthHeightLog");
 const addWeigthHeightModal = document.querySelector("#bodyWeigthHeightModal");
@@ -147,6 +159,18 @@ weigthHeightCloseButton.addEventListener("click", () => {
   addWeigthHeightModal.close();
 });
 
+addWeigthHeightModal.addEventListener("click", (e) => {
+  //Close the modal by clicking outside the dialog
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    addWeigthHeightModal.close();
+  }
+});
+
 //Open/close medication modal
 const medicationLog = document.querySelector("#medicationLog");
 const addMedicationModal = document.querySelector("#medicationModal");
@@ -162,6 +186,18 @@ medicationLog.addEventListener("click", () => {
 //Close medication modal
 medicationCloseButton.addEventListener("click", () => {
   addMedicationModal.close();
+});
+
+addMedicationModal.addEventListener("click", (e) => {
+  //Close the modal by clicking outside the dialog
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    addMedicationModal.close();
+  }
 });
 //
 
@@ -309,7 +345,7 @@ const circle = document.querySelector("circle");
 const radius = circle.r.baseVal.value;
 const circumference = 2 * Math.PI * radius;
 let counter = 0;
-let percent = 35;
+let percent = 85;
 
 circle.style.strokeDasharray = `${circumference}`;
 const progress = (100 - percent) / 100;

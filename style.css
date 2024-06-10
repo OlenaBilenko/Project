@@ -6,10 +6,14 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 header {
   top: 0px;
   padding: 30px 0px;
+}
+header h1 {
+  text-align: left;
 }
 .nav {
   height: 40px;
@@ -21,11 +25,12 @@ header {
   display: flex;
   align-items: baseline;
   justify-content: center;
+  padding-left: 30px;
 }
 ul {
   list-style-type: none;
   margin: 0;
-  padding-inline-start: 20px;
+  padding-inline-start: 0px;
 }
 a {
   text-decoration: none;
@@ -208,7 +213,8 @@ tbody tr:hover {
   cursor: pointer;
 }
 .trashTreatment svg {
-  width: 15px;
+  width: 18px;
+  padding: 0;
   cursor: pointer;
   display: none;
 }
@@ -292,12 +298,12 @@ img {
     display: none;
   }
 }
-@media screen and (max-width: 802px) {
+@media screen and (max-width: 630px) {
   .dialog-box-footer {
     display: flex;
   }
-  div h4 {
-    font-size: calc(24px / 1.7);
+  dialog div h4 {
+    font-size: calc(24px / 1.6);
     text-align: center;
   }
 }
@@ -311,8 +317,12 @@ img {
     display: none !important;
   }
   ul {
-    padding-inline-start: 0px;
+    padding: 0;
   }
+  .nav-list li:last-of-type a {
+    border: solid 1px #de6e42;
+  }
+
   .nav-list {
     flex-direction: column;
     align-items: flex-start;
@@ -330,12 +340,23 @@ img {
     margin-top: 5px;
     margin-bottom: 8px;
     align-items: left;
+    padding: 0;
+  }
+  .nav-list li:first-of-type {
+    padding-top: 1rem;
   }
   .nav-toggle {
     display: block;
   }
+  .nav-toggle:hover {
+    color: coral;
+  }
 }
 @media screen and (max-width: 838px) {
+  .graphics h4,
+  .hydration-and-planing h4 {
+    text-align: center;
+  }
   .graphics,
   .hydration-and-planing {
     flex-direction: column;
@@ -368,6 +389,7 @@ img {
     max-width: 100%;
     max-height: calc(100vw - 100px);
   }
+
   .dialog-box-content-temp,
   .dialog-box-content-weigth-heigth,
   .dialog-box-content-medication {
@@ -376,6 +398,9 @@ img {
   }
   .dialog-box-title h1 {
     font-size: 1.5rem;
+  }
+  input {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 839px) {
@@ -392,7 +417,6 @@ img {
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  margin-left: 30px;
 }
 .burger-icon {
   display: inline-block;
@@ -471,8 +495,16 @@ img {
 .dialog-box-content-temp h4,
 .dialog-box-content-weigth-heigth h4,
 .dialog-box-content-medication h4 {
+  height: 34px;
+  text-align: center;
+  align-content: center;
+}
+.dialog-box-content-temp,
+.dialog-box-content-weigth-heigth,
+.dialog-box-content-medication {
+  display: flex;
   align-items: center;
-  text-wrap: wrap;
+  flex-wrap: wrap;
 }
 .dialog-box-content-temp {
   border: 2px solid yellow;
@@ -648,4 +680,8 @@ circle {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+button {
+  padding: 0px;
 }
